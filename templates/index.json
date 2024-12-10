@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -6,34 +15,23 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "",
             "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image": "shopify://shop_images/image_8.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
-        "image_behavior": "none",
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
@@ -41,6 +39,82 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center;}"
+      ],
+      "settings": {
+        "title": "BEST SELLERS",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_VcUp6g": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fCzqMH": {
+          "type": "heading",
+          "settings": {
+            "heading": "LIMITED TIME ONLY",
+            "heading_size": "h2"
+          }
+        },
+        "text_fqUapP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SALE UP TO 40% OFF</p>"
+          }
+        },
+        "button_k7RfHB": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_fCzqMH",
+        "text_fqUapP",
+        "button_k7RfHB"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection_4gF8LQ": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center;}"
+      ],
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -48,28 +122,78 @@
         "show_description": false,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "link",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_iTm9tA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_BXRfWP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "lingerie"
+          }
+        },
+        "featured_collection_wmNnix": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "solutions"
+          }
+        },
+        "featured_collection_xkFJkg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bed-clothes"
+          }
+        },
+        "featured_collection_KWQWJh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "other"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_BXRfWP",
+        "featured_collection_wmNnix",
+        "featured_collection_xkFJkg",
+        "featured_collection_KWQWJh"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "rich_text_VcUp6g",
+    "featured_collection_4gF8LQ",
+    "collection_list_iTm9tA"
   ]
 }
