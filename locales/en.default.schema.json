@@ -638,6 +638,9 @@
         "show_view_all": {
           "label": "Enable \"View all\" button if list includes more collections than shown"
         },
+        "swipe_on_desktop": {
+          "label": "Enable swipe on desktop"
+        },
         "header_mobile": {
           "content": "Mobile Layout"
         },
