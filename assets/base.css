@@ -779,6 +779,9 @@ summary::-webkit-details-marker {
 }
 
 /* component-title */
+.title {
+  letter-spacing: 0.5em;
+}
 .title,
 .title-wrapper-with-link {
   margin: 3rem 0 2rem;
