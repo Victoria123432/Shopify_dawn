@@ -84,7 +84,7 @@
                 {% else %}
                 href="{{ card_collection.url }}"
                 {% endif %}
-                class="full-unstyled-link">
+                class="link underlined-link">
                 {%- if card_collection.title != blank -%}
                   {{- card_collection.title | escape -}}
                 {%- else -%}
@@ -92,8 +92,8 @@
                 {%- endif -%}
                 {%- if card_collection.description == blank -%}
                   {% comment %} <span class="icon-wrap">
-                                                                                                                                            {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                                                                                                              </span> {% endcomment %}
+                                                                                                                                                                                                                            {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                                                                                                                                                                                      </span> {% endcomment %}
                 {%- endif %}
               </a>
             </h3>
@@ -101,8 +101,8 @@
               <p class="card__caption">
                 {{- card_collection.description | strip_html | truncatewords: 12 -}}
               {% comment %} <span class="icon-wrap">
-                                                                                                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                                                                      </span> {% endcomment %}
+                                                                                                                                                                  {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                                                                                                                              </span> {% endcomment %}
               </p>
             {%- endif -%}
           </div>
@@ -120,7 +120,7 @@
               {% else %}
               href="{{ card_collection.url }}"
               {% endif %}
-              class="full-unstyled-link">
+              class="link underlined-link">
               {%- if card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
               {%- else -%}
@@ -128,8 +128,8 @@
               {%- endif -%}
               {%- if card_collection.featured_image or card_collection.description == blank -%}
                 {% comment %} <span class="icon-wrap">
-                                    {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                </span> {% endcomment %}
+                                                                                                            {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                                                                                </span> {% endcomment %}
               {%- endif %}
             </a>
           </h3>
@@ -151,11 +151,11 @@
             <a
               role="link"
               aria-disabled="true"
-              class="full-unstyled-link">
+              class="link underlined-link">
               {{ 'onboarding.collection_title' | t }}
             {% comment %} <span class="icon-wrap">
-                                                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                                  </span> {% endcomment %}
+                                                                                                                  {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                                                                                  </span> {% endcomment %}
             </a>
           </h3>
         </div>
