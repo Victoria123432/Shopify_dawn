@@ -956,6 +956,7 @@ class SlideshowComponent extends SliderComponent {
   constructor() {
     super();
     this.sliderControlWrapper = this.querySelector(".slider-buttons");
+
     this.enableSliderLooping = true;
 
     if (!this.sliderControlWrapper) return;

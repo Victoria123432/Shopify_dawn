@@ -3,7 +3,11 @@
 
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
-{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+
+{% comment %} 1)replaced slideshow-component to slider-component
+                    2)in ul element edded class slideshow, greed--peek
+                    3) in li added class slideshow_slide
+              4) chanhed to dots{% endcomment %}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}

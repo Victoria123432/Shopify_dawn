@@ -1,5 +1,8 @@
 .rich-text {
   z-index: 1;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .rich-text__wrapper {
@@ -83,4 +86,40 @@
 
 .rich-text__blocks.right .rich-text__buttons {
   justify-content: flex-end;
+}
+
+/* custom styles */
+
+.vec {
+  position: absolute;
+  z-index: 2;
+}
+
+.vector {
+  bottom: 0;
+  right: 80px;
+}
+.vector1 {
+  right: 170px;
+  bottom: 60px;
+}
+.vector2 {
+  right: 435px;
+  bottom: 0;
+}
+.vector3 {
+  right: 860px;
+  bottom: 150px;
+}
+.vector4 {
+  right: 690px;
+  bottom: 0;
+}
+.vector5 {
+  right: 750px;
+  bottom: -5px;
+}
+.vector6 {
+  left: 75px;
+  bottom: -5px;
 }

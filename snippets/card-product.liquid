@@ -252,7 +252,7 @@
         
         {%- if show_vendor -%}
           <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-          <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+           <div class="caption-with-letter-spacing caption-large">{{ card_product.vendor }}</div>  {% comment %}delated light added caption-large{% endcomment %}
         {%- endif -%}
 
           <h3
