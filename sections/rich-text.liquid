@@ -1,4 +1,6 @@
 {{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+{{ 'timer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'timer.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -20,98 +22,130 @@
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
-            {%- when 'heading' -%}
-              <h2
-                class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-                {% endif %}>
-                {{ block.settings.heading }}
-              </h2>
-            {%- when 'caption' -%}
-              <p
-                class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-                {% endif %}>
-                {{ block.settings.caption | escape }}
-              </p>
-            {%- when 'text' -%}
-              <div
-                class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-                {% endif %}>
-                {{ block.settings.text }}
+            <div>
+              {%- when 'heading' -%}
+                <h2
+                  class="rich-text__heading rte inline-richtext h3 title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                  {% endif %}>
+                  {{ block.settings.heading }}
+                </h2>
+              {%- when 'caption' -%}
+                <p
+                  class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                  {% endif %}>
+                  {{ block.settings.caption | escape }}
+                </p>
+              {%- when 'text' -%}
+                <div
+                  class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                  {% endif %}>
+                  {{ block.settings.text }}
+                </div>
+              {%- when 'button' -%}
+                <div
+                  class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                  {% endif %}>
+                  {%- if block.settings.button_label != blank -%}
+                    <a
+                      {% if block.settings.button_link == blank %}
+                      role="link"
+                      aria-disabled="true"
+                      {% else %}
+                      href="{{ block.settings.button_link }}"
+                      {% endif %}
+                      class="rich_button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">
+                      {{- block.settings.button_label | escape -}}
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.button_label_2 != blank -%}
+                    <a
+                      {% if block.settings.button_link_2 == blank %}
+                      role="link"
+                      aria-disabled="true"
+                      {% else %}
+                      href="{{ block.settings.button_link_2 }}"
+                      {% endif %}
+                      class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">
+                      {{- block.settings.button_label_2 | escape -}}
+                    </a>
+                  {%- endif -%}
+                </div>
               </div>
-            {%- when 'button' -%}
-              <div
-                class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-                {% endif %}>
-                {%- if block.settings.button_label != blank -%}
-                  <a
-                    {% if block.settings.button_link == blank %}
-                    role="link"
-                    aria-disabled="true"
-                    {% else %}
-                    href="{{ block.settings.button_link }}"
-                    {% endif %}
-                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">
-                    {{- block.settings.button_label | escape -}}
-                  </a>
-                {%- endif -%}
-                {%- if block.settings.button_label_2 != blank -%}
-                  <a
-                    {% if block.settings.button_link_2 == blank %}
-                    role="link"
-                    aria-disabled="true"
-                    {% else %}
-                    href="{{ block.settings.button_link_2 }}"
-                    {% endif %}
-                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">
-                    {{- block.settings.button_label_2 | escape -}}
-                  </a>
-                {%- endif -%}
+            {%- when 'timer' -%}
+              <div class="cd-container">
+                <div id="countdown">
+                  <div class="timer" data-end-date="{{ block.settings.endDate }}"></div>
+                  <ul>
+                    <li>
+                      <span id="days"></span>day</li>
+                    <li>
+                      <span id="hours"></span>Hour</li>
+                    <li>
+                      <span id="minutes"></span>Min</li>
+                    <li>
+                      <span id="seconds"></span>Sec</li>
+                  </ul>
+                </div>
               </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>
     </div>
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector.png?v=1735335642"
       alt="">
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector1"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_1.png?v=1735335653"
       alt="">
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector2"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_2.png?v=1735335660"
       alt="">
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector3"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_3.png?v=1735335666"
       alt="">
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector4"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_4.png?v=1735335672"
       alt="">
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector5"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_5.png?v=1735335677"
       alt="">
-    <img height="auto" width="auto"
+    <img
+      height="auto"
+      width="auto"
       class="vec vector6"
       src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_6.png?v=1735335684"
       alt="">
@@ -238,7 +272,8 @@
             "label": "t:sections.all.heading_size.label"
           }
         ]
-      }, {
+      },
+      {
         "type": "caption",
         "name": "t:sections.rich-text.blocks.caption.name",
         "limit": 3,
@@ -281,7 +316,8 @@
             "label": "t:sections.rich-text.blocks.caption.settings.caption_size.label"
           }
         ]
-      }, {
+      },
+      {
         "type": "text",
         "name": "t:sections.rich-text.blocks.text.name",
         "limit": 3,
@@ -293,7 +329,8 @@
             "label": "t:sections.rich-text.blocks.text.settings.text.label"
           }
         ]
-      }, {
+      },
+      {
         "type": "button",
         "name": "t:sections.rich-text.blocks.buttons.name",
         "limit": 2,
@@ -332,6 +369,19 @@
             "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_2.label"
           }
         ]
+      }, {
+        "type": "timer",
+        "name": "Countdown Timer",
+        "settings": [
+          {
+            "type": "text",
+            "id": "endDate",
+            "default": "12/25/2025",
+            "label": "End Date"
+          }
+
+        ]
+
       }
     ],
     "presets": [
@@ -344,6 +394,8 @@
             "type": "text"
           }, {
             "type": "button"
+          }, {
+            "type": "timer"
           }
         ]
       }

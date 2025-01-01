@@ -104,20 +104,30 @@
             "button_link_2": "",
             "button_style_secondary_2": false
           }
+        },
+        "timer_7RrqWa": {
+          "type": "timer",
+          "settings": {
+            "endDate": "12/25/2025"
+          }
         }
       },
       "block_order": [
         "heading_fCzqMH",
         "text_fqUapP",
-        "button_k7RfHB"
+        "button_k7RfHB",
+        "timer_7RrqWa"
+      ],
+      "custom_css": [
+        "h2 {font-weight: bold;}"
       ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "scheme-3",
         "full_width": true,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 68,
+        "padding_bottom": 68
       }
     },
     "featured_collection_4gF8LQ": {

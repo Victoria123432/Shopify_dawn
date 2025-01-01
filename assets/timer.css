@@ -1,0 +1,26 @@
+.cd-container {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+.cd-container li {
+  display: inline-block;
+  font-size: 1em;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+.cd-container li span {
+  display: block;
+  font-size: 3.5rem;
+  letter-spacing: 1.5rem;
+}
+
+@media all and (max-width: 768px) {
+  .cd-container li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+
+  .cd-container li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
