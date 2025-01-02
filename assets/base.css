@@ -608,6 +608,8 @@ details > * {
 .customer a {
   /* color: rgba(var(--color-link), var(--alpha-link)); */
   color: #1f727c;
+  font-family: besley; /* added */
+  font-size: 16px;
 }
 
 .inline-richtext a,
@@ -3708,4 +3710,8 @@ details-disclosure > details {
   }
 }
 
-/* custom stiles */
+/* custom styles */
+
+.card__margin {
+  margin: 20px;
+}

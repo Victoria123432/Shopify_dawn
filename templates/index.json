@@ -122,7 +122,7 @@
         "h2 {font-weight: bold;}"
       ],
       "settings": {
-        "desktop_content_position": "left",
+        "desktop_content_position": "center",
         "content_alignment": "left",
         "color_scheme": "scheme-3",
         "full_width": true,
