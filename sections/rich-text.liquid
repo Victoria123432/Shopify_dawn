@@ -22,7 +22,7 @@
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
-            <div>
+            
               {%- when 'heading' -%}
                 <h2
                   class="rich-text__heading rte inline-richtext h3 title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -86,69 +86,72 @@
                     </a>
                   {%- endif -%}
                 </div>
-              </div>
-            {%- when 'timer' -%}
-              <div class="cd-container">
-                <div id="countdown">
-                  <div class="timer" data-end-date="{{ block.settings.endDate }}"></div>
-                  <ul>
-                    <li>
-                      <span id="days"></span>day</li>
-                    <li>
-                      <span id="hours"></span>Hour</li>
-                    <li>
-                      <span id="minutes"></span>Min</li>
-                    <li>
-                      <span id="seconds"></span>Sec</li>
-                  </ul>
-                </div>
-              </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+    {%- when 'timer' -%}
+      <div class="cd-container">
+        <div id="countdown">
+          <div class="timer" data-end-date="{{ block.settings.endDate }}"></div>
+          <ul>
+            <li>
+              <span id="days"></span>day</li>
+            <li>
+              <span id="hours"></span>Hour</li>
+            <li>
+              <span id="minutes"></span>Min</li>
+            <li>
+              <span id="seconds"></span>Sec</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector.png?v=1735335642"
-      alt="">
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector1"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_1.png?v=1735814660"
-      alt="">
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector2"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_2.png?v=1735814710"
-      alt="">
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector3"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_3.png?v=1735335666"
-      alt="">
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector4"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_4.png?v=1735814784"
-      alt="">
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector5"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_5.png?v=1735814832"
-      alt="">
-    <img
-      height="auto"
-      width="auto"
-      class="vec vector6"
-      src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_6.png?v=1735814879"
-      alt="">
+  {%- endcase -%}
+{%- endfor -%}
+   <img
+    height="auto"
+  width="auto"
+  class="vec vector"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector.png?v=1735335642"
+  alt="">
+<img
+  height="auto"
+  width="auto"
+  class="vec vector1"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_1.png?v=1735814660"
+  alt="">
+<img
+  height="auto"
+  width="auto"
+  class="vec vector2"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_2.png?v=1735814710"
+  alt="">
+<img
+  height="auto"
+  width="auto"
+  class="vec vector3"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_3.png?v=1735335666"
+  alt="">
+<img
+  height="auto"
+  width="auto"
+  class="vec vector4"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_4.png?v=1735814784"
+  alt="">
+<img
+  height="auto"
+  width="auto"
+  class="vec vector5"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_5.png?v=1735814832"
+  alt="">
+<img
+  height="auto"
+  width="auto"
+  class="vec vector6"
+  src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Vector_6.png?v=1735814879"
+  alt=""> 
   </div>
 
 </div>

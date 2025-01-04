@@ -58,7 +58,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "best-sellers",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -98,7 +98,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NOW",
-            "button_link": "",
+            "button_link": "shopify://collections",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -108,7 +108,7 @@
         "timer_7RrqWa": {
           "type": "timer",
           "settings": {
-            "endDate": "12/25/2025"
+            "endDate": "03/23/2025"
           }
         }
       },
@@ -141,7 +141,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "new-arrived",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,

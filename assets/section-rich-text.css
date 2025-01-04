@@ -1,6 +1,4 @@
 .rich-text {
-  z-index: 1;
-  position: relative;
   width: 100%;
   height: auto;
 }
@@ -13,6 +11,8 @@
   display: flex;
   justify-content: center;
   width: calc(100% - 4rem / var(--font-body-scale));
+  position: relative;
+  z-index: 2;
 }
 
 .rich-text:not(.rich-text--full-width) .rich-text__wrapper {
@@ -114,7 +114,7 @@
 
 .vec {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 }
 
 .vector {
@@ -155,4 +155,13 @@
 .rich_button {
   background-color: #ff8674;
   padding: 10px 30px;
+}
+
+.rich_button:hover {
+  background-color: #e37362;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
