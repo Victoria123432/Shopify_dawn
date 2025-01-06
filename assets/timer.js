@@ -4,11 +4,9 @@
     hour = minute * 60,
     day = hour * 24;
 
-  // Знайти всі елементи із класом "timer"
   const timers = document.querySelectorAll(".timer");
 
   timers.forEach((timer) => {
-    // Отримати значення "endDate" із data-атрибута
     const endDate = timer.getAttribute("data-end-date");
     const countDown = new Date(endDate).getTime();
 
@@ -26,10 +24,9 @@
       minutesElement.innerText = Math.floor((distance % hour) / minute);
       secondsElement.innerText = ":" + Math.floor((distance % minute) / second);
 
-      // Зупинити таймер, якщо час закінчився
       if (distance < 0) {
         clearInterval(x);
-        timer.parentElement.style.display = "none"; // Сховати таймер
+        timer.style.display = "none";
       }
     }, 1000);
   });

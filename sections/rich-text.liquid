@@ -93,8 +93,7 @@
         {%- case block.type -%}
     {%- when 'timer' -%}
       <div class="cd-container">
-        <div id="countdown">
-          <div class="timer" data-end-date="{{ block.settings.endDate }}"></div>
+        <div id="countdown" class="timer"  data-end-date="{{ block.settings.endDate }}">
           <ul>
             <li>
               <span id="days"></span>day</li>
