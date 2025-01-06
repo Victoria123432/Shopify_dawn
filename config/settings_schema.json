@@ -1486,6 +1486,35 @@
     ]
   },
 
+
+  {
+    "name": "Card Button",
+    "settings": [
+      
+      {
+        "type": "color_scheme",
+        "id": "card_button_color_scheme",
+        "label": "Card Button Color Scheme",
+        "default": "scheme-1"
+      },
+
+      {
+        "type": "range",
+        "id": "button_corner_radius",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 50
+      }
+
+    ]
+  },
+
+
+
+
   {
     "name": "t:settings_schema.brand_information.name",
     "settings": [

@@ -27,9 +27,10 @@
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+  {{ 'card-button.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
 
-
+<script src="{{ 'card-button.js' | asset_url }}" defer="defer"></script>
 
 
 {% assign use_card_swatches = false %}
@@ -124,7 +125,7 @@
     >
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
-        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%; z-index:666"
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -175,7 +176,7 @@
             </div>
           </div>
         {%- endif -%}
-        <div class="card__content">
+        <div class="card__content" style="z-index:777">
           <div class="card__information">
             <h3
               class="card__heading"
@@ -213,11 +214,6 @@
 
 
 
-
-
-
-
-
           {%- assign positions = 'bottom left,bottom right,top left,top right' | split: ',' -%}
           {%- for position in positions -%}
            <div class="card__badge {{position}}" style="display: block;">
@@ -240,6 +236,21 @@
           {%- endif -%}
         </div>
         {%- endfor -%} 
+
+        {%- if show_button-%}
+          <div class="button-cont right">
+            <button class="card-button color-{{ settings.card_button_color_scheme }}"><img src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Frame_239.png?v=1736089252" alt=""></button>
+            <button class="show-now-btn"><a
+            href="{{ card_product.url }}"
+            id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}"
+            class=""
+            aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+          >
+            show now
+          </a>
+          </div>    
+        {%- endif -%}   
+
 
       </div>
     </div>

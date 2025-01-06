@@ -5,8 +5,8 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
 {% comment %} 1)replaced slideshow-component to slider-component
-                            2)in ul element edded class slideshow, greed--peek
-                            3) in li added class slideshow_slide
+                                  2)in ul element edded class slideshow, greed--peek
+                                  3) in li added class slideshow_slide
               4) chanhed to dots{% endcomment %}
 
 {% if section.settings.image_shape == 'blob' %}
@@ -112,6 +112,7 @@
               , skip_styles: skip_card_product_styles
               , section_id: section.id
               , quick_add: section.settings.quick_add
+              , show_button: section.settings.show_button
             %}
           </li>
           {%- assign skip_card_product_styles = true -%}
@@ -138,7 +139,7 @@
                 , media_aspect_ratio: section.settings.image_ratio
                 , image_shape: section.settings.image_shape
                 , placeholder_image: placeholder_image
-                ,
+                , show_button: section.settings.show_button
               %}
             </li>
           {%- endfor -%}
@@ -394,6 +395,12 @@
         "default": false,
         "label": "t:sections.featured-collection.settings.show_rating.label",
         "info": "t:sections.featured-collection.settings.show_rating.info"
+      }, {
+        "type": "checkbox",
+        "id": "show_button",
+        "default": true,
+        "label": "t:sections.featured-collection.settings.show_button.label",
+        "info": "t:sections.featured-collection.settings.show_button.info"
       }, {
         "type": "select",
         "id": "quick_add",
