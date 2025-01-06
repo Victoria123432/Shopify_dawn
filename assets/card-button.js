@@ -2,18 +2,13 @@ const cardButtons = document.querySelectorAll(".card-button");
 
 cardButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Знаходимо контейнер кнопки
     const buttonContainer = button.closest(".button-cont");
-
-    // Знаходимо кнопку "show now" всередині цього контейнера
     const showNowButton = buttonContainer.querySelector(".show-now-btn");
 
-    // Додаємо клас для анімації
     if (showNowButton) {
       showNowButton.classList.add("visible");
     }
 
-    // Ховаємо натиснуту кнопку
     button.style.display = "none";
   });
 });
