@@ -1357,38 +1357,12 @@
         "default": "normal"
       },
       {
-        "type": "select",
-        "id": "custom_badge_layout",
-        "label": "Badge Display Layout",
-        "options": [
-          {
-            "value": "inline-block",
-            "label": "In line"
-          },
-          {
-            "value": "block",
-            "label": "Stacked"
-          }
-        ],
-        "default": "block"
-      },
-      {
-        "type": "range",
-        "id": "custom_badge_spacing",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "default": 3,
-        "unit": "px",
-        "label": "Spacing between badges"
-      },
-      {
         "type": "header",
-        "content": "Custom Badge new"
+        "content": "Custom Badge"
       },
       {
         "type": "select",
-        "id": "custom_badge_new_enable",
+        "id": "custom_badge_enable",
         "options": [
           {
             "value": "none",
@@ -1408,11 +1382,11 @@
           }
         ],
         "default": "none",
-        "label": "Enable Custom Badge new"
+        "label": "Enable Custom Badge"
       },
       {
         "type": "select",
-        "id": "custom_badge_new_option",
+        "id": "custom_badge_option",
         "options": [
           {
             "value": "text",
@@ -1428,11 +1402,11 @@
           }
         ],
         "default": "text",
-        "label": "Custom Badge new Type"
+        "label": "Custom Badge Type"
       },
       {
         "type": "select",
-        "id": "custom_badge_new_position",
+        "id": "custom_badge_position",
         "options": [
           {
             "value": "bottom left",
@@ -1452,35 +1426,35 @@
           }
         ],
         "default": "top left",
-        "label": "Custom Badge new Position on Cards"
+        "label": "Custom Badge Position on Cards"
       },
       {
         "type": "text",
-        "id": "custom_badge_new_text",
-        "label": "Custom Badge new Text",
+        "id": "custom_badge_text",
+        "label": "Custom Badge Text",
         "default": "Custom"
       },
       {
         "type": "color_scheme",
-        "id": "custom_badge_new_color_scheme",
-        "label": "Custom Badge new Color Scheme",
+        "id": "custom_badge_color_scheme",
+        "label": "Custom Badge Color Scheme",
         "default": "scheme-5"
       },
       {
         "type": "image_picker",
-        "id": "custom_badge_new_image",
-        "label": "Custom Badge new Image",
+        "id": "custom_badge_image",
+        "label": "Custom Badge Image",
         "info": "Use .png for transparency"
       },
       {
         "type": "range",
-        "id": "custom_badge_new_image_width",
+        "id": "custom_badge_image_width",
         "min": 10,
         "max": 100,
         "step": 5,
         "default": 50,
         "unit": "px",
-        "label": "Custom Badge new Image Width"
+        "label": "Custom Badge Image Width"
       }
 
     ]

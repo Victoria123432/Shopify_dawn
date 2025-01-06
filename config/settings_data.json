@@ -108,8 +108,8 @@
     "badge_corner_radius": 0,
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
-    "custom_badge_new_enable": "product_cards",
-    "custom_badge_new_text": "New",
+    "custom_badge_enable": "both",
+    "custom_badge_text": "New",
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
@@ -131,6 +131,8 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "custom_badge_new_enable": "product_cards",
+    "custom_badge_new_text": "New",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",

@@ -219,17 +219,17 @@
            <div class="card__badge {{position}}" style="display: block;">
             {%- if settings.badge_display_order == 'normal' -%}
       
-            {%- if card_product.metafields.custom.custom_badge_new == true and settings.custom_badge_new_position == position -%}
-             {%- if settings.custom_badge_new_enable == "product_cards" or settings.custom_badge_new_enable == "both" -%}
+            {%- if card_product.metafields.custom.custom_badge_new == true and settings.custom_badge_position == position -%}
+             {%- if settings.custom_badge_new_enable == "product_cards" or settings.custom_badge_enable == "both" -%}
              {%- render 'custom-badge-product-card', 
              badge_type: "custom",
              product: card_product,
              section_id: section_id,
-             custom_badge_option: settings.custom_badge_new_option, 
-             custom_badge_color_scheme: settings.custom_badge_new_color_scheme, 
-             custom_badge_text: settings.custom_badge_new_text, 
-             custom_badge_image: settings.custom_badge_new_image, 
-             custom_badge_image_width: settings.custom_badge_new_image_width 
+             custom_badge_option: settings.custom_badge_option, 
+             custom_badge_color_scheme: settings.custom_badge_color_scheme, 
+             custom_badge_text: settings.custom_badge_text, 
+             custom_badge_image: settings.custom_badge_image, 
+             custom_badge_image_width: settings.custom_badge_image_width 
             -%}
            {%- endif -%}
           {%- endif -%} 
