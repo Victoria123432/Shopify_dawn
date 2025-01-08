@@ -1,11 +1,18 @@
 .rich-text {
-  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+.isolate {
+  overflow: hidden !important;
 }
 
 .rich-text__wrapper {
   display: flex;
   justify-content: center;
   width: calc(100% - 4rem / var(--font-body-scale));
+  position: relative;
+  z-index: 2;
 }
 
 .rich-text:not(.rich-text--full-width) .rich-text__wrapper {
@@ -15,6 +22,8 @@
 
 .rich-text__blocks {
   width: 100%;
+  justify-content: space-between;
+  padding-left: 15rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -32,6 +41,95 @@
 
   .rich-text__blocks {
     max-width: 50rem;
+  }
+
+  .vec {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .vector {
+    bottom: 0;
+    right: 80px;
+  }
+  .vector1 {
+    right: 170px;
+    bottom: 60px;
+  }
+  .vector2 {
+    right: 435px;
+    bottom: 0;
+  }
+  .vector3 {
+    right: 860px;
+    bottom: 150px;
+  }
+  .vector4 {
+    right: 690px;
+    bottom: 0;
+  }
+  .vector5 {
+    right: 750px;
+    bottom: -130px;
+  }
+  .vector6 {
+    right: 1130px;
+    bottom: -100px;
+  }
+
+  .vector7 {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .vec {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .vector,
+  .vector3,
+  .vector5,
+  .vector6 {
+    display: none;
+  }
+  .vector1 {
+    right: -1px;
+    bottom: -150px;
+  }
+  .vector2 {
+    right: 230px;
+    bottom: -170px;
+  }
+
+  .vector4 {
+    right: 500px;
+    bottom: -140px;
+  }
+
+  .vector7 {
+    right: 80px;
+    bottom: 280px;
+    scale: 2;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .rich-text__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .rich-text__blocks {
+    padding: 0;
+    text-align: center;
+  }
+
+  .rich-text__buttons {
+    justify-content: center !important;
   }
 }
 
@@ -83,4 +181,26 @@
 
 .rich-text__blocks.right .rich-text__buttons {
   justify-content: flex-end;
+}
+
+/* custom styles */
+
+.rich-text__text {
+  color: white !important;
+  font-size: 4rem;
+  margin: 0 !important;
+}
+
+.rich_button {
+  background-color: #ff8674;
+  padding: 10px 30px;
+}
+
+.rich_button:hover {
+  background-color: #e37362;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }

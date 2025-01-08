@@ -621,6 +621,70 @@
       }
     ]
   },
+
+
+
+
+  {
+    "name": "Product Card Swatches",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "card_swatches",
+        "default": false,
+        "label": "Enable Product Card Swatches"
+      },
+      {
+        "type": "checkbox",
+        "id": "card_swatch_lazy_load",
+        "default": false,
+        "label": "Lazy Load Variant Images"
+      },
+      {
+        "type": "text",
+        "id": "card_variant_option_name",
+        "label": "Variant Option Name",
+        "default": "Color"
+      },
+      {
+        "type": "text",
+        "id": "card_variant_swatch_metaobject",
+        "label": "Default Variant Swatch Map Metaobject",
+        "default": "variant-swatch-mapping",
+        "info": "Can be overridden with product metafield"
+      },
+      {
+        "id": "card_swatch_shape_custom",
+        "label": "Swatch Shape",
+        "type": "select",
+        "options": [
+          {
+            "value": "circle",
+            "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__1.label"
+          },
+          {
+            "value": "square",
+            "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__2.label"
+          }
+        ],
+        "default": "circle"
+      },
+      {
+        "type": "range",
+        "id": "card_swatch_size_custom",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Swatch Size",
+        "default": 25
+      }
+    ]
+  },
+
+
+
+
   {
     "name": "t:settings_schema.collection_cards.name",
     "settings": [
@@ -1268,6 +1332,163 @@
       }
     ]
   },
+
+  {
+    "name": "Custom Badges",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Display Options"
+      },
+      {
+        "type": "select",
+        "id": "badge_display_order",
+        "label": "Badge Display Order",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "reverse",
+            "label": "Reverse"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "header",
+        "content": "Custom Badge"
+      },
+      {
+        "type": "select",
+        "id": "custom_badge_enable",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "product_cards",
+            "label": "Product Cards Only (ex: collection page)"
+          },
+          {
+            "value": "product_page",
+            "label": "Product Page Only"
+          },
+          {
+            "value": "both",
+            "label": "Both Product Cards and Product Page"
+          }
+        ],
+        "default": "none",
+        "label": "Enable Custom Badge"
+      },
+      {
+        "type": "select",
+        "id": "custom_badge_option",
+        "options": [
+          {
+            "value": "text",
+            "label": "Text Badge"
+          },
+          {
+            "value": "image",
+            "label": "Image Badge"
+          },
+          {
+            "value": "dynamic_image",
+            "label": "Dynamic Image Badge"
+          }
+        ],
+        "default": "text",
+        "label": "Custom Badge Type"
+      },
+      {
+        "type": "select",
+        "id": "custom_badge_position",
+        "options": [
+          {
+            "value": "bottom left",
+            "label": "t:settings_schema.badges.settings.position.options__1.label"
+          },
+          {
+            "value": "bottom right",
+            "label": "t:settings_schema.badges.settings.position.options__2.label"
+          },
+          {
+            "value": "top left",
+            "label": "t:settings_schema.badges.settings.position.options__3.label"
+          },
+          {
+            "value": "top right",
+            "label": "t:settings_schema.badges.settings.position.options__4.label"
+          }
+        ],
+        "default": "top left",
+        "label": "Custom Badge Position on Cards"
+      },
+      {
+        "type": "text",
+        "id": "custom_badge_text",
+        "label": "Custom Badge Text",
+        "default": "Custom"
+      },
+      {
+        "type": "color_scheme",
+        "id": "custom_badge_color_scheme",
+        "label": "Custom Badge Color Scheme",
+        "default": "scheme-5"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_badge_image",
+        "label": "Custom Badge Image",
+        "info": "Use .png for transparency"
+      },
+      {
+        "type": "range",
+        "id": "custom_badge_image_width",
+        "min": 10,
+        "max": 100,
+        "step": 5,
+        "default": 50,
+        "unit": "px",
+        "label": "Custom Badge Image Width"
+      }
+
+    ]
+  },
+
+
+  {
+    "name": "Card Button",
+    "settings": [
+      
+      {
+        "type": "color_scheme",
+        "id": "card_button_color_scheme",
+        "label": "Card Button Color Scheme",
+        "default": "scheme-1"
+      },
+
+      {
+        "type": "range",
+        "id": "button_corner_radius",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 50
+      }
+
+    ]
+  },
+
+
+
+
   {
     "name": "t:settings_schema.brand_information.name",
     "settings": [
