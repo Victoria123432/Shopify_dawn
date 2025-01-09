@@ -67,12 +67,18 @@
   margin-bottom: 1.5rem;
   padding-left: 1rem;
   text-align: left;
-  min-height: calc(4rem + var(--inputs-border-width) * 2);
-  min-width: calc(7rem + var(--inputs-border-width) * 2);
+  width: 44px !important;
+  height: 44px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.localization-form__select:hover {
+  scale: 1.1;
 }
 
 .disclosure__button.localization-form__select {
-  padding: calc(2rem + var(--inputs-border-width));
+  padding: 0 !important;
   background: rgb(var(--color-background));
 }
 
@@ -218,7 +224,9 @@
 }
 
 .country-filter__search-icon {
-  transition: opacity var(--duration-short) ease, visibility var(--duration-short) ease;
+  transition:
+    opacity var(--duration-short) ease,
+    visibility var(--duration-short) ease;
   opacity: 1;
   visibility: visible;
   pointer-events: none;
