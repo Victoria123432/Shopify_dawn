@@ -109,7 +109,8 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "custom_badge_enable": "both",
-    "custom_badge_text": "New",
+    "custom_badge_text": "NEW",
+    "custom_badge_color_scheme": "scheme-5",
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
@@ -195,7 +196,7 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#334fb4",
+          "background": "#309bea",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
