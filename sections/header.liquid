@@ -219,7 +219,7 @@
         {% endif %}
 
         {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
+          <localization-form class="medium-hide" data-prevent-hide>
             {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
               <div>
                 <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
@@ -260,7 +260,7 @@
         </a>
       {%- endif -%}
 
-      <a href="#swym-wishlist" class="swym-wishlist header__icon svg-wrapper">
+      <a href="#swym-wishlist" class="swym-wishlist small-hide header__icon svg-wrapper">
       <img src=  "https://cdn.shopify.com/s/files/1/0857/7741/6439/files/wish-list.png?v=1736364077">
       </a>
 

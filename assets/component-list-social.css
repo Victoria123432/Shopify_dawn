@@ -45,3 +45,37 @@
 .social-background img:hover {
   scale: 1.1;
 }
+
+@media screen and (max-width: 750px) {
+  .social-background {
+    background-color: transparent;
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: column; /* Вирівнюємо заголовок і список по вертикалі */
+    align-items: center;
+    width: 50%;
+  }
+
+  .footer__list-social {
+    display: flex; /* Вмикаємо Flexbox для списку */
+    justify-content: center; /* Вирівнюємо елементи по центру */
+    flex-wrap: nowrap; /* Забороняємо перенесення на новий рядок */
+    gap: 15px;
+    list-style: none; /* Забираємо стилі списку */
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-social__item {
+    flex: 0 1 auto; /* Дозволяємо елементам стискатися */
+    text-align: center; /* Центруємо вміст */
+    max-width: 100%; /* Обмежуємо розмір елементів */
+  }
+
+  .list-social__item img,
+  .list-social__item svg {
+    scale: 1.5;
+  }
+}

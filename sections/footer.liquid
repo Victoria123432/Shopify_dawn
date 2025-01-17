@@ -41,10 +41,12 @@
     color: white;
     margin-top: 2rem;
     border: none;
-    font-size: 20px;
-    padding: 1rem;
+    font-size: 18px;
+    padding: 2rem;
     font-family: Cardo, 
     serif;
+    letter-spacing: 1px;
+    cursor: pointer;
   }
 
   .subscribe_button:hover{
@@ -53,20 +55,77 @@
   .field__input{
     background-color: rgb(255, 255, 255);
     color: black;
+    padding: 2.8rem;
   }
   .field__label{
     color: #1F727C;
+    top: calc(1.5rem + var(--inputs-border-width));
   }
+
+  @media screen and (max-width: 750px) {
+
+  .field__label {
+    color: #000000;
+  }
+}
 
   h5{
     text-align: center;
+    font-weight: bold;
+  }
+  h2{
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    font-size: 1.7rem !important;
   }
 
   .copyright__content{
     font-family: Prompt, sans-serif;
     color: white;
+    font-weight: bold;
   }
 </style>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const headings = document.querySelectorAll('.grid .footer-block__heading');
+
+  const handleCollapse = (heading) => {
+    const content = heading.nextElementSibling;
+
+    if (heading.classList.contains('block-collapsed')) {
+      heading.classList.remove('block-collapsed');
+      heading.setAttribute('aria-expanded', 'true');
+      content.style.display = 'block';
+    } else {
+      heading.classList.add('block-collapsed');
+      heading.setAttribute('aria-expanded', 'false');
+      content.style.display = 'none';
+    }
+  };
+
+  headings.forEach((heading, index) => {
+    heading.classList.add('block-collapsed');
+    heading.setAttribute('role', 'button');
+    heading.setAttribute('aria-expanded', 'false');
+    heading.setAttribute('tabindex', '0');
+
+    const content = heading.nextElementSibling;
+    content.setAttribute('id', `footer-block-index-${index}`);
+    heading.setAttribute('aria-controls', `footer-block-index-${index}`);
+
+    heading.addEventListener('click', () => {
+      handleCollapse(heading);
+    });
+
+    heading.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        handleCollapse(heading);
+      }
+    });
+  });
+});
+</script>
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
@@ -117,7 +176,7 @@
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h>
+                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
@@ -129,7 +188,7 @@
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled">
+                      <ul class="footer-block__details-content list-unstyled row">
                         {%- for link in block.settings.menu.links -%}
                           <li>
                             <a
@@ -209,12 +268,12 @@
             {%- endfor -%}
 
             {%- if section.settings.newsletter_enable -%}
-            <div class="ffooter-block grid__item ooter-block__newsletter">
+            <div class="ffooter-block grid__item footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class="footer-block__heading inline-richtext" style="margin-top: 1.5rem; letter-spacing: 0.3em;">{{ section.settings.newsletter_heading }}</h2>
+                <h2 class="footer-block__heading inline-richtext" style="margin-top: 1.5rem;">{{ section.settings.newsletter_heading }}</h2>
               {%- endif -%}
               {%- if section.settings.newsletter_description != blank -%}
-                <p>{{ section.settings.newsletter_description }}</p>
+                <p style="color:white; margin-top:0;">{{ section.settings.newsletter_description }}</p>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
@@ -339,6 +398,7 @@
           </localization-form>
         {%- endif -%}
       </div>
+
         <div class="footer__column country"><selector-root data-id=FC916352 id="FC916352"></selector-root></div>
       
       <div class="footer__column footer__copyright caption">
