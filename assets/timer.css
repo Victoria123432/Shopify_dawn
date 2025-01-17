@@ -17,6 +17,11 @@
 }
 
 @media all and (max-width: 768px) {
+  .cd-container ul {
+    display: inline-flex;
+    padding: 0;
+    white-space: nowrap;
+  }
   .cd-container li {
     font-size: 1.5rem;
   }

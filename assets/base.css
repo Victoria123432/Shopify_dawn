@@ -792,9 +792,9 @@ summary::-webkit-details-marker {
   font-size: inherit;
 }
 
-.title-wrapper {
+/* .title-wrapper {
   margin-bottom: 3rem;
-}
+} */
 
 .title-wrapper-with-link {
   display: flex;
@@ -1062,11 +1062,12 @@ summary::-webkit-details-marker {
 
   .grid--peek .grid__item {
     min-width: 35%;
+    padding: 25px;
   }
 
-  .grid--peek.slider .grid__item:first-of-type {
+  /* .grid--peek.slider .grid__item:first-of-type {
     margin-left: 1.5rem;
-  }
+  } */
 
   /* Fix to show some space at the end of our sliders in all browsers */
   .grid--peek.slider:after {
