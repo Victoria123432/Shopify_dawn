@@ -1,7 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "blocks": {
+        "section_kBKjKT": {
+          "type": "section",
+          "repeater": "{{ collection.metafields.custom.subcategory_meta.value }}",
+          "settings": {
+            "image": "{{ block.repeater.subcategory_image.value }}",
+            "image_link": "{{ block.repeater.subcategory_url.value }}",
+            "category_title": "{{ block.repeater.subcategory_name.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "section_kBKjKT"
+      ],
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,

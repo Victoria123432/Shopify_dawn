@@ -13,7 +13,8 @@
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}:
+        </span>
         {{- collection.title | escape -}}
       </h1>
 
@@ -38,41 +39,87 @@
           sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
           alt="{{ collection.image.alt | escape }}"
           width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
-        >
+          height="{{ collection.image.height }}">
       </div>
     {%- endif -%}
+
+    <ul class="collection-list grid grid--6-col-desktop grid--2-col-tablet-down" role="list">
+      {%- for block in section.blocks -%}
+        {% if block.type == "section" %}
+          <li
+            class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+            {% endif %}>
+            <a href="{{ block.settings.image_link | escape }}" class="collection-item__link">
+              <img
+                src="{{ block.settings.image | img_url: '500x' }}"
+                alt="{{ block.settings.category_title | escape }}"
+                class="collection-item__image">
+              <h3 class="collection-item__title">{{ block.settings.category_title }}</h3>
+            </a>
+          </li>
+        {% endif %}
+      {%- endfor -%}
+    </ul>
+
+
   </div>
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.main-collection-banner.name",
-  "class": "section",
-  "settings": [
-    {
-      "type": "paragraph",
-      "content": "t:sections.main-collection-banner.settings.paragraph.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_collection_description",
-      "default": true,
-      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_collection_image",
-      "default": false,
-      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
-      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    }
-  ]
-}
+  {
+    "name": "t:sections.main-collection-banner.name",
+    "class": "section",
+    "blocks": [
+      {
+        "type": "section",
+        "name": "custom collage section",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "collage Image"
+          }, {
+            "type": "url",
+            "id": "image_link",
+            "label": "Image link"
+          }, {
+            "type": "text",
+            "id": "category_title",
+            "label": "Category Title"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:sections.main-collection-banner.settings.paragraph.content"
+      }, {
+        "type": "checkbox",
+        "id": "show_collection_description",
+        "default": true,
+        "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+      }, {
+        "type": "checkbox",
+        "id": "show_collection_image",
+        "default": false,
+        "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+        "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Category"
+      }
+    ]
+  }
 {% endschema %}
