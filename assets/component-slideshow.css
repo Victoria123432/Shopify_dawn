@@ -31,6 +31,10 @@ slideshow-component .slideshow.banner {
   .slideshow--placeholder.banner--adapt_image {
     height: 56rem;
   }
+
+  .slideshow__slide {
+    padding: 12px;
+  }
 }
 
 .slideshow__text.banner__box {
