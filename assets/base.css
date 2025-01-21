@@ -1062,7 +1062,7 @@ summary::-webkit-details-marker {
 
   .grid--peek .grid__item {
     min-width: 35%;
-    padding: 25px;
+    /* padding: 25px; */
   }
 
   /* .grid--peek.slider .grid__item:first-of-type {
