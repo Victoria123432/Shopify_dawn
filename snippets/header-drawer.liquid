@@ -16,6 +16,28 @@
   .menu-drawer__menu-item:hover {
     text-decoration: underline;
   }
+
+  .menu-icon {
+    display: flex;
+    padding-top: 3rem;
+    justify-content: start;
+    align-items: center;
+    width: 20px;
+  }
+  .header__icon--menu .icon-close,
+  .icon-hamburger {
+    display: block;
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.15s ease
+    , opacity 0.15s ease;
+  }
+
+  .header__icon--menu .icon-close {
+    right: 5%;
+    top: -10px;
+  }
   @media (max-width: 750px) {
     .mobile-list-menu {
       display: block;
@@ -57,6 +79,13 @@
 
       background-color: white;
 
+    }
+
+    .close-icon-menu {
+      display: flex;
+      position: absolute;
+      right: 30px;
+      top: 30px;
     }
 
   }
@@ -242,16 +271,9 @@
                     {{- 'icon-account.svg' | inline_asset_content -}}
                   </span>
                 {%- endif -%}
-              {% comment %} {%- liquid
-                                                  if customer
-                                                    echo 'customer.account_fallback' | t
-                                                  else
-                                                    echo 'customer.log_in' | t
-                                                  endif
-                                            -%} {% endcomment %}
               </a>
             {%- endif -%}
-            <a href="#swym-wishlist" class="swym-wishlist medium-hide large-up-hide header__icon svg-wrapper">
+            <a href="#swym-wishlist" class="swym-wishlist medium-hide large-up-hide menu-icon">
               <img src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/wish-list.png?v=1736364077">
             </a>
 
