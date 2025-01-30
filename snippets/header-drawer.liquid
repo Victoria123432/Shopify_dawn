@@ -49,13 +49,14 @@
     }
 
     .menu-drawer {
-      width: 85%;
+      width: 84%;
     }
 
     .header__icon--menu .icon-close {
       position: fixed;
-      right: 5%;
+      right: 8.5%;
       top: 30px;
+      z-index: 9;
     }
 
     .menu-drawer__utility-links {
@@ -90,7 +91,10 @@
       width: 100%;
       border-bottom: solid #BEEBEAFF 2px;
       padding-bottom: 1rem;
+      padding-left: 1rem;
+      margin-bottom: 2.5rem;
     }
+
 
     .arrow {
       border: solid #1f727c;
@@ -99,15 +103,40 @@
       padding: 5px;
     }
 
-    .right {
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-    }
-    .left {
+    .right-ar {
       transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
     }
 
+    .js .menu-drawer__menu li {
+      margin: 0 2rem;
+      border-bottom: 2px solid #beebeaff;
+    }
+
+    .header-menu__heading {
+      margin-bottom: 0;
+    }
+
+    .button-back-wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    .title-wrapper {
+      margin: 0 2rem;
+      padding: 2rem 0;
+      border-bottom: 2px solid #beebeaff;
+    }
+
+    .header__icon--menu[aria-expanded='true']::before {
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      position: fixed;
+
+    }
   }
 
 
@@ -172,7 +201,7 @@
               {%- for link in section.settings.menu.links -%}
                 <li class="desktop-list-menu">
                   {%- if link.links != blank -%}
-                    <h2 class="footer-block__heading inline-richtext">{{ link.title | escape }}</h2>
+                    <h2 class="header-menu__heading inline-richtext">{{ link.title | escape }}</h2>
                     <div class="menu-drawer__inner-submenu">
                       <ul
                         class="menu-drawer__menu list-menu"
@@ -218,10 +247,11 @@
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}" class="mobile-list-menu">
                       <summary id="HeaderDrawer-{{ link.handle }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                        {{ link.title | escape }}
-                          <span class="svg-wrapper">
+                        <h2 class="header-menu__heading inline-richtext">
+                          {{ link.title | escape }}</h2>
+                        <span class="svg-wrapper">
                           {% comment %} {{- 'icon-arrow.svg' | inline_asset_content -}} {% endcomment %}
-                          <span class="arrow right"></span>
+                          <span class="arrow right-ar"></span>
                         </span>
                         <span class="svg-wrapper">
                           {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -234,17 +264,23 @@
                         <div class="menu-drawer__inner-submenu">
                           {% render 'header-search'
                             , input_id: 'Search-In-Modal' %}
+                          <div class="button-back-wrapper">
                             <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                            <span class="svg-wrapper">
-                              {% comment %} {{- 'icon-arrow.svg' | inline_asset_content -}} {% endcomment %}
+                              <span class="svg-wrapper">
+                                {% comment %} {{- 'icon-arrow.svg' | inline_asset_content -}} {% endcomment %}
 
-                              <span class="arrow left"></span>
-                            </span>
-                            {% comment %} {{ link.title | escape }} {% endcomment %}
-                            BACK
-                          </button>
-                          <div>
-                            {{ link.title | escape }}</div>
+                                <span class="arrow right-ar"></span>
+                              </span>
+                              {% comment %} {{ link.title | escape }} {% endcomment %}
+                              <h2 class="header-menu__heading inline-richtext">
+                                BACK</h2>
+                            </button>
+                          </div>
+
+                          <div class="title-wrapper">
+                            <h2 class="header-menu__heading">{{ link.title | escape }}</h2>
+                          </div>
+
                           <ul
                             class="menu-drawer__menu list-menu"
                             role="list"
@@ -337,7 +373,8 @@
                       </span>
                     {%- endif -%}
                   </account-icon>
-                  ACCOUNT
+                  <span>
+                    ACCOUNT</span>
                 {%- else -%}
                   <span class="svg-wrapper">
                     {{- 'icon-account.svg' | inline_asset_content -}}

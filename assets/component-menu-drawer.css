@@ -103,14 +103,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .js .menu-drawer__menu li {
-  /* margin-bottom: 0.2rem; */
+  margin-bottom: 0.2rem;
 
-  margin: 0 2rem;
-  border-bottom: 2px solid #beebeaff;
+  /* margin: 0 2rem;
+  border-bottom: 2px solid #beebeaff; */
 }
 
 .menu-drawer__menu-item {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   text-decoration: none;
   font-size: 1.8rem;
 }
@@ -147,7 +147,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .js .menu-drawer__submenu {
   position: absolute;
-  top: 0;
+  top: 10px;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -163,7 +163,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__close-button {
   margin-top: 1.5rem;
-  padding: 1.2rem 2.6rem 1.2rem 3rem;
+  padding: 1.2rem 2.6rem 2rem 3rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -173,12 +173,18 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   text-align: left;
+  justify-content: center;
+  margin: 0 2rem;
+  border-bottom: 2px solid #beebeaff;
 }
 
 .menu-drawer__close-button .svg-wrapper {
   transform: rotate(180deg);
   margin-right: 1rem;
   width: 15px;
+
+  position: absolute;
+  left: 20px;
 }
 
 .menu-drawer__utility-links {
