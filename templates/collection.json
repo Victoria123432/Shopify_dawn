@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "image_banner_nm4Mg6": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/dark-wall-bedside-table_925x_dcfdf3ae-84a1-4c60-b511-bb4b4daa10f5.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "blocks": {
@@ -53,6 +69,7 @@
     }
   },
   "order": [
+    "image_banner_nm4Mg6",
     "banner",
     "product-grid"
   ]
