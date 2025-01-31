@@ -1512,6 +1512,11 @@
         "label": "t:settings_schema.brand_information.settings.brand_image.label"
       },
       {
+        "type": "inline_richtext",
+        "id": "image_description",
+        "label": "Image description"
+      },
+      {
         "type": "range",
         "id": "brand_image_width",
         "min": 50,
@@ -1528,13 +1533,17 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.social-media.settings.header.content"
+        "content": "Social title"
       },
       {
-        "type": "text",
-        "id": "social_facebook_link",
-        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
+        "type": "inline_richtext",
+        "id": "social_title",
+        "label": "Title",
+        "default": "Social Title"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header.content"
       },
       {
         "type": "text",
@@ -1544,9 +1553,21 @@
       },
       {
         "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
+      },  
+      {
+        "type": "text",
         "id": "social_youtube_link",
         "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linkedin",
+        "placeholder": "Linkedin.com"
       },
       {
         "type": "text",

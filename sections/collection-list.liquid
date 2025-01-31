@@ -15,6 +15,19 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  @media (max-width: 989px) and (min-width: 750px) {
+    .width {
+      width: calc(70% - var(--grid-desktop-horizontal-spacing) - 3rem) !important;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .width {
+      width: 100% !important;
+    }
+    .no-gap {
+      column-gap: 0;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -48,7 +61,7 @@
 
     <slideshow-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
-        class="collection-list
+        class="gap collection-list
          slideshow
          contains-card
          contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %}
@@ -68,8 +81,8 @@
         {%- for block in section.blocks -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="slideshow_slide collection-list__item grid__item
-            {% if show_mobile_slider %} slider__slide{% endif %}
+            class="width slideshow_slide collection-list__item grid__item
+            {% if show_mobile_slider %} slideshow__slide{% endif %}
             {% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}
             {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
