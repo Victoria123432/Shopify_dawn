@@ -137,6 +137,10 @@ slider-component.slider-component-full-width {
     max-width: none;
   }
 
+  .slider-component-desktop {
+    padding: 0 5rem;
+  }
+
   .slider--desktop {
     position: relative;
     flex-wrap: inherit;
