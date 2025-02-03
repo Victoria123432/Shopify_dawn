@@ -1,8 +1,8 @@
-{% comment %}
+{% comment %} 
   Renders a header drawer menu for mobile and desktop.
-
+ 
   Usage:
-  {% render 'header-drawer' %}
+  {% render 'header-drawer' %} 
 {% endcomment %}
 
 <style>
@@ -35,10 +35,11 @@
 
 
   /*
-   .header__icon--menu .icon-close {
-   right: 5%;
-   top: -10px;
-   }
+
+   .header__icon--menu .icon-close { 
+   right: 5%; 
+   top: -10px; 
+   } 
 */
   @media (max-width: 750px) {
     .mobile-list-menu {
@@ -122,7 +123,7 @@
       width: 100%;
     }
 
-    .title-wrapper {
+    .header-title-wrapper {
       margin: 0 2rem;
       padding: 2rem 0;
       border-bottom: 2px solid #beebeaff;
@@ -277,7 +278,7 @@
                             </button>
                           </div>
 
-                          <div class="title-wrapper">
+                          <div class="header-title-wrapper">
                             <h2 class="header-menu__heading">{{ link.title | escape }}</h2>
                           </div>
 
