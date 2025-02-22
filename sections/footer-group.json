@@ -44,8 +44,6 @@
         "color_scheme": "scheme-4",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
-        "newsletter_description": "Description",
-        "button_label": "SUBSCRIBE",
         "enable_follow_on_shop": true,
         "show_social": false,
         "enable_country_selector": false,
