@@ -80,29 +80,42 @@
         "heading_qf8BXG": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h1"
+            "heading": "NEW PRODUCT",
+            "heading_size": "h2"
           }
         },
         "text_pnPXUe": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "text": "THE EVERNESS",
+            "text_style": "large"
+          }
+        },
+        "buttons_Amn9Ni": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
         "heading_qf8BXG",
-        "text_pnPXUe"
+        "text_pnPXUe",
+        "buttons_Amn9Ni"
       ],
       "settings": {
         "image": "shopify://shop_images/diy-organic-candle_925x_65dcb285-8c07-4a1b-9910-f23210f7afc7.jpg",
+        "image_3": "shopify://shop_images/footer_banner.png",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "large",
         "desktop_content_position": "middle-left",
         "show_text_box": true,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
