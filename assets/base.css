@@ -1704,7 +1704,7 @@ details[open] > .share-button__fallback {
   width: 1rem; */
   pointer-events: none;
   position: absolute;
-  top: calc(50% - 0.2rem);
+  top: calc(10% - 0.2rem);
   right: 0;
 }
 

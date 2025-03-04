@@ -1,15 +1,15 @@
 {% comment %} 
-                                                                                                                                                                                                                                                                                                          Renders facets (filtering and sorting)
-                                                                                                                                                                                                                                                                                                         
-                                                                                                                                                                                                                                                                                                          Accepts: 
-                                                                                                                                                                                                                                                                                                          - results: {Object} Collection or Search object 
-                                                                                                                                                                                                                                                                                                          - enable_filtering: {Boolean} Show filtering when true 
-                                                                                                                                                                                                                                                                                                          - enable_sorting: {Boolean} Show sorting when true 
-                                                                                                                                                                                                                                                                                                          - filter_type: {String} Type of filter 
-                                                                                                                                                                                                                                                                                                          - paginate: {Object}
-                                                                                                                                                                                                                                                                                                         
-                                                                                                                                                                                                                                                                                                          Usage:
-                                                                                                                                                                                                                                                                                                          {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %} 
+                                                                                                                                                                                                                                                                                                                                              Renders facets (filtering and sorting)
+                                                                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                              Accepts: 
+                                                                                                                                                                                                                                                                                                                                              - results: {Object} Collection or Search object 
+                                                                                                                                                                                                                                                                                                                                              - enable_filtering: {Boolean} Show filtering when true 
+                                                                                                                                                                                                                                                                                                                                              - enable_sorting: {Boolean} Show sorting when true 
+                                                                                                                                                                                                                                                                                                                                              - filter_type: {String} Type of filter 
+                                                                                                                                                                                                                                                                                                                                              - paginate: {Object}
+                                                                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                              Usage:
+                                                                                                                                                                                                                                                                                                                                              {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %} 
 {% endcomment %}
 
 {{ 'component-show-more.css' | asset_url | stylesheet_tag }}
@@ -31,35 +31,22 @@
 
 
 <script>
+  
   document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('products-per-page-form');
-  const input = document.getElementById('product-input');
-  const display = document.getElementById('product-count');
+  const select = document.getElementById('product-select');
+  
   
   const urlParams = new URLSearchParams(window.location.search);
-  let value = urlParams.get('products_count') || 16; // Значення за замовчуванням
+  let value = urlParams.get('products_count') || '12'; 
   
-  input.value = value;
-  display.textContent = value;
+  select.value = value;
   
-  input.addEventListener('input', function () {
-    let newValue = parseInt(this.value, 10);
-  
-    if (isNaN(newValue) || newValue < 4) {
-      newValue = 4;
-    } else if (newValue > 36) {
-      newValue = 36;
-    }
-  
-    display.textContent = newValue;
-  });
-  
-  input.addEventListener('change', function () {
-    const newValue = input.value;
+  select.addEventListener('change', function () {
+    const newValue = this.value;
     
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set('products_count', newValue);
-  
+    
     window.location.search = searchParams.toString();
   });
   });
@@ -103,21 +90,13 @@
     display: none;
   }
 
-  #product-input {
-    width: 50px;
-    padding: 5px;
-    font-size: 16px;
-    border: 2px solid #faf0db;
-    background-color: transparent;
-    text-align: center;
-    border-radius: 4px;
-    color: #2D7B84FF;
-  }
-
-  #product-input:focus {
-    outline: none;
-    border-color: #b8c4c2;
-    background-color: #f9f5f0;
+  .desktop_show_pp {
+    width: fit-content;
+    padding-left: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #faf0dbff;
   }
 
 
@@ -566,32 +545,35 @@
       {%- render 'loading-spinner' -%}
     </div>
 
-    <form
-      method="get"
-      action="{{ request.path }}"
-      id="products-per-page-form"
-      class="desktop_show_pp">
-      <details>
-        <summary style="display: flex; justify-content: end;">
-          <div style="border-bottom: 2px solid #faf0dbff;">
-            <span>Show
-              <span id="product-count"></span>
-            </span>
-            {{- 'icon-caret.svg' | inline_asset_content -}}
-          </div>
-        </summary>
-        <div style="display: flex; justify-content: end;">
-          <input
-            type="number"
-            name="products_count"
-            id="product-input"
-            placeholder="Enter number"
-            min="4"
-            max="36">
-        </div>
-      </details>
-    </form>
 
+    <div class="facet-filters__field">
+      <div class="desktop_show_pp ">
+        <h2 class="facet-filters__label caption-large text-body">
+          <label for="SortBy">
+            <span>Show
+
+            </span>
+          </label>
+        </h2>
+        <div class="select">
+          <select
+            class="facet-filters__sort select__select caption-large"
+            name="products_count"
+            id="product-select">
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+            <option value="24">24</option>
+            <option value="30">30</option>
+          </select>
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </div>
+      </div>
+    </div>
 
   {%- endif -%}
   {% comment %}  Drawer and mobile filter {% endcomment %}
