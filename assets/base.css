@@ -554,6 +554,13 @@ hr {
   display: block;
 }
 
+.full-unstyled-link {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
 .placeholder {
   background-color: rgba(var(--color-foreground), 0.04);
   color: rgba(var(--color-foreground), 0.55);
@@ -2876,6 +2883,7 @@ details[open] > .header__menu-item .icon-caret {
   box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)
     rgba(var(--color-shadow), var(--popup-shadow-opacity));
   z-index: -1;
+  width: 100%;
 }
 
 .header__submenu.list-menu {
@@ -3650,4 +3658,9 @@ details-disclosure > details {
 
 .swym-heart {
   display: none;
+}
+
+.font-style-b-l {
+  font-weight: bold;
+  letter-spacing: 0.5rem;
 }
