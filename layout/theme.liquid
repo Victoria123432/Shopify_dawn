@@ -352,9 +352,34 @@ body {
     {%- endif -%}
 
     <script>
-      if (Shopify.designMode) {
-        document.documentElement.classList.add('shopify-design-mode');
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+          let path = JSON.parse(localStorage.getItem("shopify_breadcrumbs")) || [];
+      
+          let currentPath = window.location.pathname;
+      
+          let existingIndex = path.indexOf(currentPath);
+          if(existingIndex !== -1){
+            path = path.slice(0, existingIndex + 1);
+          } else{
+            if(currentPath !== "/"){
+              path.push(currentPath);
+            }
+          }
+      
+          localStorage.setItem("shopify_breadcrumbs", JSON.stringify(path));
+      
+      
+          let breadcrumbHTML = '<ul class="breadcrumbs"><li><a href="/">Home</a></li>';
+          path.forEach((url) => {
+        if (url !== "/") {  
+            let name = url.split('/').pop().replace(/-/g, ' ');
+            breadcrumbHTML += `<li><a href="${url}">${name}</a></li>`;
+        }
+          });
+          breadcrumbHTML += "</ul>";
+      
+          document.querySelector(".breadcrumb-container").innerHTML = breadcrumbHTML;
+      });
     </script>
   </head>
 

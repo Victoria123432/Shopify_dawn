@@ -1,9 +1,11 @@
 .card-product-custom-div {
-  visibility: hidden;
+  visibility: visible;
+  height: 100%;
 }
 
 .card-product-custom-div.loaded {
   visibility: visible;
+  height: 100%;
 }
 
 .card__content.card-swatch__content,
@@ -56,18 +58,13 @@
 }
 
 .collection-product-card__swatch input.disabled + label::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(
-    to bottom right,
-    transparent 50%,
-    #1f727c 50%,
-    transparent 55%
-  );
+  background: linear-gradient(to bottom right, transparent 50%, #1f727c 50%, transparent 55%);
   pointer-events: none;
 }
 

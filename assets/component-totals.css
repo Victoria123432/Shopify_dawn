@@ -10,7 +10,7 @@
 }
 
 .totals > h2 {
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-size: calc(var(--font-heading-scale) * 2.5rem);
 }
 
 .totals * {
@@ -22,11 +22,15 @@
 }
 
 .totals__total {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .totals__total-value {
-  font-size: 1.8rem;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  font-family: Prompt, sans-serif;
+  color: #006262ff;
 }
 
 .cart__ctas + .totals {

@@ -280,6 +280,9 @@ slider-component.slider-component-full-width {
     /*delated :not(.slider--desktop)*/
     display: none;
   }
+  .related-products .slider--desktop + .slider-buttons {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 989px) {

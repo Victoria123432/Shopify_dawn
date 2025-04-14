@@ -17,6 +17,14 @@
   }
 {%- endstyle -%}
 
+<style>
+  .cart__ctas .underlined-link{
+    white-space: nowrap;
+    text-transform: uppercase;
+    padding-top: 1rem;
+  }
+</style>
+
 <div
   class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
   id="main-cart-footer"
@@ -59,8 +67,8 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  <h2 class="totals__total">TOTAL</h2>
+                  <p class="totals__total-value">{{ cart.total_price | money}}</p>
                 </div>
 
                 <small class="tax-note caption-large rte">
@@ -75,12 +83,9 @@
                     {%- endif -%}
                   {%- elsif cart.duties_included == false and cart.taxes_included -%}
                     {%- if shop.shipping_policy.body == blank -%}
-                      {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                      Taxes included and shipping calculated at checkout.
                     {%- else -%}
-                      {{
-                        'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
-                        | t: link: shop.shipping_policy.url
-                      }}
+                    Taxes included and shipping calculated at checkout.
                     {%- endif -%}
                   {%- elsif cart.duties_included and cart.taxes_included == false -%}
                     {%- if shop.shipping_policy.body == blank -%}
@@ -105,6 +110,9 @@
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+        {{- 'general.continue_shopping' | t -}}
+      </a>
                 <button
                   type="submit"
                   id="checkout"
@@ -117,7 +125,10 @@
                 >
                   {{ 'sections.cart.checkout' | t }}
                 </button>
+                
               </div>
+
+              
 
               {%- if additional_checkout_buttons -%}
                 <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
