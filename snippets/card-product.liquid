@@ -122,15 +122,19 @@
         {% if horizontal_class %} card--horizontal{% endif %}
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
-    >
+    > 
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
-        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%; z-index:666"
+        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%; pointer-events: none; z-index:666;"
       >
+      
         {%- if card_product.featured_media -%}
+          
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+            
             <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+              
               <img
                 srcset="
                   {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
@@ -151,6 +155,7 @@
                 width="{{ card_product.featured_media.width }}"
                 height="{{ card_product.featured_media.height }}"
               >
+              
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
               {%- if card_product.media[1] != null and show_secondary_image -%}
@@ -173,9 +178,14 @@
                   height="{{ card_product.media[1].height }}"
                 >
               {%- endif -%}
+              
             </div>
+            
           </div>
-        {%- endif -%}
+          
+        {%- endif -%} 
+        
+       
         <div class="card__content" style="z-index:777">
           <div class="card__information">
             <h3
@@ -211,6 +221,7 @@
               </span>
             {%- endif -%}
           </div>
+         
 
 
 
@@ -235,8 +246,11 @@
           {%- endif -%} 
           {%- endif -%}
         </div>
+        
+
         {%- endfor -%} 
 
+        
         {%- if show_button-%}
           <div class="button-cont right">
             <button class="card-button color-{{ settings.card_button_color_scheme }}"><img src="https://cdn.shopify.com/s/files/1/0857/7741/6439/files/Frame_239.png?v=1736089252" alt=""></button>
@@ -249,12 +263,15 @@
             show now
           </a>
           </div>    
-        {%- endif -%}   
-
-
+        {%- endif -%}  
+        
       </div>
-    </div>
+
       
+    </div>
+
+    
+    
 
 
 
@@ -427,7 +444,7 @@
         </div>
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}
-          <div class="quick-add no-js-hidden">
+          <div class="rel-pr-st quick-add no-js-hidden">
             {%- liquid
               assign qty_rules = false
               if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
@@ -720,6 +737,8 @@
     </div>
   </div>
 
+  
+
 
 
   {% if settings.card_swatches %} 
@@ -781,3 +800,6 @@
     </div>
   </div>
 {%- endif -%}
+
+
+

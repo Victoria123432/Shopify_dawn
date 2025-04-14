@@ -12,16 +12,36 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "breadcrumbs_wKkdbp": {
+          "type": "breadcrumbs",
+          "settings": {}
+        },
+        "text_PBLpc9": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.title }}",
+            "text_style": "uppercase",
+            "font_size": "large",
+            "font_weight": "normal"
+          }
+        },
+        "text_fMYhHN": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "body",
+            "font_size": "medium",
+            "font_weight": "bold"
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
             "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text_style": "uppercase",
+            "font_size": "small",
+            "font_weight": "normal"
           }
-        },
-        "title": {
-          "type": "title",
-          "settings": {}
         },
         "price": {
           "type": "price",
@@ -34,10 +54,6 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -49,37 +65,155 @@
           "type": "description",
           "settings": {}
         },
-        "share": {
-          "type": "share",
+        "collapsible_tab_JAg96L": {
+          "type": "collapsible_tab",
           "settings": {
-            "share_label": "Share"
+            "heading": "{{ metaobjects.features.firmness.title.value }}",
+            "icon": "none",
+            "content": "<p>{{ metaobjects.features.firmness.description | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_Xb9mPy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ metaobjects.features.material.title.value }}",
+            "icon": "none",
+            "content": "<p>{{ metaobjects.features.material.description | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_J9teqV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ metaobjects.features.waterproof.title.value }}",
+            "icon": "none",
+            "content": "<p>{{ metaobjects.features.waterproof.description | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "complementary_cigKWV": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Complete your interior",
+            "hide_comp_pr_at_desktop": true,
+            "show_button": true,
+            "show_vendor": true,
+            "make_collapsible_row": false,
+            "icon": "none",
+            "product_list_limit": 8,
+            "products_per_page": 2,
+            "pagination_style": "counter",
+            "image_ratio": "portrait",
+            "enable_quick_add": false
           }
         }
       },
       "block_order": [
+        "breadcrumbs_wKkdbp",
+        "text_PBLpc9",
+        "text_fMYhHN",
         "vendor",
-        "title",
         "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "collapsible_tab_JAg96L",
+        "collapsible_tab_Xb9mPy",
+        "collapsible_tab_J9teqV",
+        "complementary_cigKWV"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "media_fit": "cover",
+        "gallery_layout": "columns",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "enable_video_looping": true,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "slideshow_MY7ygC": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_cBQA8c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/diy-organic-candle_925x_65dcb285-8c07-4a1b-9910-f23210f7afc7.jpg",
+            "heading": "JUST IN",
+            "heading_size": "h1",
+            "subheading_1": "COMFFURNITURE",
+            "subheading_2": "FLATTERING FURNITURE FOR EVERYONE",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "box_align": "top-right",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-9001a474-34ad-404e-a6e1-1d2c70acf0a7",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_grYyGx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/dark-wall-bedside-table_925x_dcfdf3ae-84a1-4c60-b511-bb4b4daa10f5.jpg",
+            "heading": "JUST IN",
+            "heading_size": "h1",
+            "subheading_1": "COMFFURNITURE",
+            "subheading_2": "FLATTERING FURNITURE FOR EVERYONE",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "box_align": "top-right",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-9001a474-34ad-404e-a6e1-1d2c70acf0a7",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_hTGGdL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/condominium-interior-livingroom_925x_0c64e430-7191-4a6e-b905-b07c0e0b80b2.jpg",
+            "heading": "JUST IN",
+            "heading_size": "h1",
+            "subheading_1": "COMFFURNITURE",
+            "subheading_2": "FLATTERING  FURNITURE FOR EVERYONE",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "box_align": "top-right",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-9001a474-34ad-404e-a6e1-1d2c70acf0a7",
+            "text_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cBQA8c",
+        "slide_grYyGx",
+        "slide_hTGGdL"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "related-products": {
@@ -87,22 +221,76 @@
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
-        "products_to_show": 4,
+        "products_to_show": 8,
+        "enable_desktop_slider": true,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
+        "show_secondary_image": false,
+        "show_vendor": true,
         "show_rating": false,
+        "show_button": true,
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
         "padding_top": 36,
-        "padding_bottom": 28
+        "padding_bottom": 72
+      }
+    },
+    "rich_text_cTcBY9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qUicjk": {
+          "type": "heading",
+          "settings": {
+            "heading": "LIMITED TIME ONLY",
+            "heading_size": "h1"
+          }
+        },
+        "text_RtmNht": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SALE UP TO 40% OFF</p>"
+          }
+        },
+        "button_fR9cPb": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "timer_Wt9NcL": {
+          "type": "timer",
+          "settings": {
+            "endDate": "12/25/2025"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qUicjk",
+        "text_RtmNht",
+        "button_fR9cPb",
+        "timer_Wt9NcL"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "slideshow_MY7ygC",
+    "related-products",
+    "rich_text_cTcBY9"
   ]
 }

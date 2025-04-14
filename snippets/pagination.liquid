@@ -1,29 +1,55 @@
-{% comment %}
-  Renders a set of links for paginated results. Must be used within paginate tags.
-
-  Usage:
-  {% paginate results by 2 %}
+{% comment %} 
+    Renders a set of links for paginated results. Must be used within paginate tags.
+   
+    Usage:
+    {% paginate results by 2 %} 
     {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
-  {% endpaginate %}
-
-  Accepts:
-  - paginate: {Object}
-  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+    {% endpaginate %}
+   
+    Accepts: 
+    - paginate: {Object} 
+    - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag. 
 {% endcomment %}
 
 {{ 'component-pagination.css' | asset_url | stylesheet_tag }}
 
+
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+
+{%- assign pageUrlWithHost = contentForQuerystring | split: '"pageurl":"' | last | split: '"' | first | 
+ replace: '\/', '/' | 
+ replace: '%20', ' ' | 
+ replace: '\u0026', '&'
+-%}
+
+{%- assign query_params = pageUrlWithHost | split: '?' -%}
+{%- assign has_products_count = false -%}
+{%- assign products_count_value = '16' -%}
+
+{%- if query_params.size > 1 -%}
+  {%- assign params_list = query_params[1] | split: '&' -%}
+  {%- for param in params_list -%}
+    {%- if param contains 'products_count=' -%}
+      {%- assign has_products_count = true -%}
+      {%- assign product_count_param = param | split: 'products_count=' -%}
+      {%- assign products_count_value = product_count_param[1] -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
 {%- if paginate.parts.size > 0 -%}
   <div class="pagination-wrapper">
-    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+    <nav
+      class="pagination"
+      role="navigation"
+      aria-label="{{ 'general.pagination.label' | t }}">
       <ul class="pagination__list list-unstyled" role="list">
         {%- if paginate.previous -%}
           <li>
             <a
-              href="{{ paginate.previous.url }}{{ anchor }}"
+              href="{{ paginate.previous.url }}{% if has_products_count %}&products_count={{ products_count_value }}{% endif %}{{ anchor }}"
               class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
-              aria-label="{{ 'general.pagination.previous' | t }}"
-            >
+              aria-label="{{ 'general.pagination.previous' | t }}">
               <span class="svg-wrapper">
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </span>
@@ -35,10 +61,9 @@
           <li>
             {%- if part.is_link -%}
               <a
-                href="{{ part.url }}{{ anchor }}"
+                href="{{ part.url }}{% if has_products_count %}&products_count={{ products_count_value }}{% endif %}{{ anchor }}"
                 class="pagination__item link"
-                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
-              >
+                aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
                 {{- part.title -}}
               </a>
             {%- else -%}
@@ -48,8 +73,7 @@
                   aria-disabled="true"
                   class="pagination__item pagination__item--current light"
                   aria-current="page"
-                  aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
-                >
+                  aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
                   {{- part.title -}}
                 </a>
               {%- else -%}
@@ -62,10 +86,9 @@
         {%- if paginate.next -%}
           <li>
             <a
-              href="{{ paginate.next.url }}{{ anchor }}"
+              href="{{ paginate.next.url }}{% if has_products_count %}&products_count={{ products_count_value }}{% endif %}{{ anchor }}"
               class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
-              aria-label="{{ 'general.pagination.next' | t }}"
-            >
+              aria-label="{{ 'general.pagination.next' | t }}">
               <span class="svg-wrapper">
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </span>

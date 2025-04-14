@@ -1,7 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "image_banner_nm4Mg6": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/dark-wall-bedside-table_925x_dcfdf3ae-84a1-4c60-b511-bb4b4daa10f5.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
+      "blocks": {
+        "section_kBKjKT": {
+          "type": "section",
+          "repeater": "{{ collection.metafields.custom.subcategory_meta.value }}",
+          "settings": {
+            "image": "{{ block.repeater.subcategory_image.value }}",
+            "image_link": "{{ block.repeater.subcategory_url.value }}",
+            "category_title": "{{ block.repeater.subcategory_name.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "section_kBKjKT"
+      ],
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -11,26 +50,84 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
+        "show_button": true,
         "show_rating": false,
         "quick_add": "none",
+        "promo_banner": "5",
+        "promo_banner_text": "JUST IN",
+        "promo_banner_text_2": "40",
+        "promo_banner_text_min": "Limiyed time only",
+        "promo_banner_btn_text": "SHOP NOW",
+        "pr_color_scheme": "",
+        "pr_color_scheme_2": "scheme-74b958a7-aa87-4dbd-b47e-8c5790c71ec5",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "padding_top": 36,
+        "padding_top": 64,
         "padding_bottom": 36
+      }
+    },
+    "image_banner_r9AD6f": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_qf8BXG": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW PRODUCT",
+            "heading_size": "h2"
+          }
+        },
+        "text_pnPXUe": {
+          "type": "text",
+          "settings": {
+            "text": "THE EVERNESS",
+            "text_style": "large"
+          }
+        },
+        "buttons_Amn9Ni": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_qf8BXG",
+        "text_pnPXUe",
+        "buttons_Amn9Ni"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/diy-organic-candle_925x_65dcb285-8c07-4a1b-9910-f23210f7afc7.jpg",
+        "image_3": "shopify://shop_images/footer_banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     }
   },
   "order": [
+    "image_banner_nm4Mg6",
     "banner",
-    "product-grid"
+    "product-grid",
+    "image_banner_r9AD6f"
   ]
 }
